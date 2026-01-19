@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickRead - Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>QuickRead Settings</h1>
+            </div>
+        </header>
+
+        <!-- API Key Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4">
+                    </path>
+                </svg>
+                Gemini API Key
+            </h2>
+
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="password" id="apiKeyInput" placeholder="Enter your Gemini API key" autocomplete="off">
+                    <button class="toggle-visibility" id="toggleVisibility" title="Toggle visibility">
+                        <svg class="eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg class="eye-closed" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" style="display:none">
+                            <path
+                                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24">
+                            </path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="saveBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                        <polyline points="7 3 7 8 15 8"></polyline>
+                    </svg>
+                    Save API Key
+                </button>
+                <button class="btn btn-secondary" id="testBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Test API Key
+                </button>
+            </div>
+
+            <!-- Status Display -->
+            <div class="status" id="status"></div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="section troubleshooting" id="troubleshooting">
+            <h2 class="section-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Troubleshooting
+            </h2>
+
+            <div class="troubleshoot-cards">
+                <div class="troubleshoot-card" id="error-API_KEY_INVALID">
+                    <h3>❌ Invalid API Key</h3>
+                    <p>Your API key appears to be invalid or incorrectly entered.</p>
+                    <ul>
+                        <li>Make sure you copied the entire key</li>
+                        <li>Check for extra spaces at the beginning or end</li>
+                        <li>Verify the key is from <a href="https://aistudio.google.com/apikey" target="_blank">Google
+                                AI Studio</a></li>
+                        <li>Try generating a new API key</li>
+                    </ul>
+                </div>
+
+                <div class="troubleshoot-card" id="error-QUOTA_EXCEEDED">
+                    <h3>⚠️ Quota Exceeded</h3>
+                    <p>You've exceeded your API usage quota.</p>
+                    <ul>
+                        <li>Wait a few minutes and try again</li>
+                        <li>Check your usage at <a href="https://console.cloud.google.com/" target="_blank">Google Cloud
+                                Console</a></li>
+                        <li>Consider upgrading your API plan</li>
+                    </ul>
+                </div>
+
+                <div class="troubleshoot-card" id="error-NETWORK_ERROR">
+                    <h3>🌐 Network Error</h3>
+                    <p>Unable to connect to the Gemini API.</p>
+                    <ul>
+                        <li>Check your internet connection</li>
+                        <li>Try disabling VPN if you're using one</li>
+                        <li>Check if <a href="https://generativelanguage.googleapis.com" target="_blank">Google API</a>
+                            is accessible</li>
+                    </ul>
+                </div>
+
+                <div class="troubleshoot-card" id="error-PERMISSION_DENIED">
+                    <h3>🔒 Permission Denied</h3>
+                    <p>The API key doesn't have the required permissions.</p>
+                    <ul>
+                        <li>Enable the Generative Language API in your Google Cloud project</li>
+                        <li>Make sure your API key has access to Gemini models</li>
+                        <li>Check API restrictions in Google Cloud Console</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="get-key-section">
+                <h3>🔑 Need an API Key?</h3>
+                <p>Get your free Gemini API key from Google AI Studio:</p>
+                <a href="https://aistudio.google.com/apikey" target="_blank" class="btn btn-accent">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Get API Key
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about">
+            <h2 class="section-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </h2>
+            <p class="about-text">QuickRead uses the Gemini AI to summarize web content. Your API key is stored
+                securely in your browser's local storage and is never sent anywhere except to Google's Gemini API.</p>
+            <p class="version">Version 1.0.0</p>
+        </section>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+
+</html>

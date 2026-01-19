@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickRead</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>QuickRead</h1>
+      </div>
+      <button class="settings-btn" id="settingsBtn" title="Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+          </path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Format Selector -->
+    <div class="format-selector">
+      <button class="format-btn active" data-format="brief">
+        <span class="format-icon">📄</span>
+        Brief
+      </button>
+      <button class="format-btn" data-format="bullets">
+        <span class="format-icon">📋</span>
+        Bullets
+      </button>
+      <button class="format-btn" data-format="detailed">
+        <span class="format-icon">📚</span>
+        Detailed
+      </button>
+    </div>
+
+    <!-- Action Button -->
+    <button class="summarize-btn" id="summarizeBtn">
+      <span class="btn-text">Summarize This Page</span>
+      <span class="btn-icon">✨</span>
+    </button>
+
+    <!-- Status Messages -->
+    <div class="status" id="status"></div>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Analyzing content...</p>
+    </div>
+
+    <!-- Summary Result -->
+    <div class="result-container" id="resultContainer">
+      <div class="result-header">
+        <h3>Summary</h3>
+        <div class="result-actions">
+          <button class="action-btn" id="saveBtn" title="Save summary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+              <polyline points="17 21 17 13 7 13 7 21"></polyline>
+              <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            <span>Save</span>
+          </button>
+          <button class="action-btn" id="copyBtn" title="Copy to clipboard">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy</span>
+          </button>
+        </div>
+      </div>
+      <div class="result-content" id="resultContent"></div>
+    </div>
+
+    <!-- Saved Summaries History -->
+    <div class="history-section" id="historySection">
+      <div class="history-header">
+        <h3>📚 Saved Summaries</h3>
+        <button class="clear-history-btn" id="clearHistoryBtn" title="Clear all">Clear All</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+      <p class="history-empty" id="historyEmpty">No saved summaries yet</p>
+    </div>
+
+    <!-- No API Key Warning -->
+    <div class="warning" id="apiWarning">
+      <p>⚠️ API key not configured</p>
+      <button class="warning-btn" id="setupApiBtn">Setup API Key</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

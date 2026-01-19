@@ -1,0 +1,334 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0f2847 100%);
+    color: #e0e7ff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(77, 157, 224, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 28px;
+    filter: drop-shadow(0 0 10px rgba(77, 157, 224, 0.8));
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4d9de0, #00fff5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sections */
+.section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(77, 157, 224, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #7ec8e3;
+    margin-bottom: 20px;
+}
+
+.section-title svg {
+    color: #4d9de0;
+}
+
+/* Input Styles */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 157, 224, 0.3);
+    border-radius: 12px;
+    padding: 14px 50px 14px 16px;
+    font-size: 14px;
+    color: #e0e7ff;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: #6b7c93;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #4d9de0;
+    box-shadow: 0 0 20px rgba(77, 157, 224, 0.2);
+}
+
+.toggle-visibility {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #6b7c93;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.3s ease;
+}
+
+.toggle-visibility:hover {
+    color: #7ec8e3;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    flex: 1;
+    background: linear-gradient(135deg, #4d9de0, #2575b8);
+    color: white;
+    box-shadow: 0 4px 15px rgba(77, 157, 224, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(77, 157, 224, 0.5);
+}
+
+.btn-secondary {
+    flex: 1;
+    background: rgba(77, 157, 224, 0.15);
+    border: 1px solid rgba(77, 157, 224, 0.3);
+    color: #7ec8e3;
+}
+
+.btn-secondary:hover {
+    background: rgba(77, 157, 224, 0.25);
+    border-color: #4d9de0;
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, #00fff5, #4d9de0);
+    color: #0a0a1a;
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 255, 245, 0.4);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Status Display */
+.status {
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status.success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.status.error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.status.loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(77, 157, 224, 0.15);
+    border: 1px solid rgba(77, 157, 224, 0.3);
+    color: #7ec8e3;
+}
+
+/* Troubleshooting */
+.troubleshooting {
+    display: none;
+}
+
+.troubleshooting.active {
+    display: block;
+}
+
+.troubleshoot-cards {
+    display: none;
+}
+
+.troubleshoot-card {
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.troubleshoot-card.active {
+    display: block;
+}
+
+.troubleshoot-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fca5a5;
+    margin-bottom: 8px;
+}
+
+.troubleshoot-card p {
+    font-size: 13px;
+    color: #a0b4d0;
+    margin-bottom: 12px;
+}
+
+.troubleshoot-card ul {
+    padding-left: 20px;
+}
+
+.troubleshoot-card li {
+    font-size: 13px;
+    color: #c4d4e8;
+    margin-bottom: 6px;
+}
+
+.troubleshoot-card a {
+    color: #4d9de0;
+    text-decoration: none;
+}
+
+.troubleshoot-card a:hover {
+    text-decoration: underline;
+}
+
+/* Get Key Section */
+.get-key-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(77, 157, 224, 0.15);
+}
+
+.get-key-section h3 {
+    font-size: 16px;
+    color: #7ec8e3;
+    margin-bottom: 8px;
+}
+
+.get-key-section p {
+    font-size: 13px;
+    color: #a0b4d0;
+    margin-bottom: 16px;
+}
+
+/* About Section */
+.about-text {
+    font-size: 13px;
+    color: #a0b4d0;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.version {
+    font-size: 12px;
+    color: #6b7c93;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(77, 157, 224, 0.4);
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(77, 157, 224, 0.6);
+}
