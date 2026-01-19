@@ -1,7 +1,7 @@
 # QuickRead - AI-Powered Web Content Summarizer
 
 <p align="center">
-  <img src="assets/banner.png" alt="QuickRead Banner" width="100%">
+  <img src="banner.png" alt="QuickRead Banner" width="100%">
 </p>
 
 <p align="center">
@@ -183,3 +183,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   Made with ❤️ by <a href="https://github.com/AbizarDholkawala">Abizar Dholkawala </a>
 </p>
+
