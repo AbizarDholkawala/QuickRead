@@ -39,13 +39,13 @@
 <div style="padding-bottom: 10;">
     <p>Configure your Gemini API key with validation and troubleshooting.</p>
 </div>
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/4nRCD8NZ/Saved-Summaries.png" alt="Saved Summaries" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/zhpQv9K9/Settings.png" alt="Saved Summaries" border="0"></a>
 
 ### Summary History
 <div style="padding-bottom: 10;">
     <p>View and manage your saved summaries.</p>
 </div>
-<a href="https://ibb.co/QFLpwSsS"><img src="https://i.ibb.co/zhpQv9K9/Settings.png" alt="Settings" border="0"></a>
+<a href="https://ibb.co/QFLpwSsS"><img src="https://i.ibb.co/4nRCD8NZ/Saved-Summaries.png" alt="Settings" border="0"></a>
 
 </details>
 
@@ -192,6 +192,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   Made with ❤️ by <a href="https://github.com/AbizarDholkawala">Abizar Dholkawala </a>
 </p>
+
 
 
 
