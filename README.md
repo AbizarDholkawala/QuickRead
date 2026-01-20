@@ -44,6 +44,7 @@
 ### Summary History
 <div style="padding-bottom: 10;">
     <p>View and manage your saved summaries.</p>
+    <p>Saves upto 20 summaries.</p>
 </div>
 <a href="https://ibb.co/QFLpwSsS"><img src="https://i.ibb.co/4nRCD8NZ/Saved-Summaries.png" alt="Settings" border="0"></a>
 
@@ -192,6 +193,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   Made with ❤️ by <a href="https://github.com/AbizarDholkawala">Abizar Dholkawala </a>
 </p>
+
 
 
 
